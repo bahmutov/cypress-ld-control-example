@@ -9,34 +9,13 @@ const Root = styled.div`
 const Heading = styled.h1`
   color: #00449e;
 `;
-const ListItem = styled.li`
-  margin-top: 10px;
-`;
-const FlagDisplay = styled.div`
-  font-size: 20px;
-  font-weight: bold;
-`;
-const FlagOn = styled.span`
-  color: #96bf01;
-`;
 const Home = ({ flags }) => (
   <Root>
-    <Heading>Welcome to launchdarkly-react-client-sdk Example App</Heading>
+    <Heading>{flags.testingLaunchDarklyControlFromCypress}, World</Heading>
     <div>
-      To run this example:
-      <ul>
-        <ListItem>
-          In app.js, set clientSideID to your own Client-side ID. You can find this in your ld portal under Account
-          settings / Projects.
-        </ListItem>
-        <ListItem>
-          Create a flag called dev-test-flag in your project. Make sure you make it available for the client side js
-          sdk.
-        </ListItem>
-        <ListItem>Turn the flag on and off to see this app respond without a browser refresh.</ListItem>
-      </ul>
+      This is a LaunchDarkly React example project. The message above changes the greeting,
+      based on the current feature flag variation.
     </div>
-    <FlagDisplay>{flags.devTestFlag ? <FlagOn>Flag on</FlagOn> : <span>Flag off</span>}</FlagDisplay>
   </Root>
 );
 

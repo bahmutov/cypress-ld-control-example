@@ -8,37 +8,16 @@ const Root = styled.div`
 const Heading = styled.h1`
   color: #00449e;
 `;
-const ListItem = styled.li`
-  margin-top: 10px;
-`;
-const FlagDisplay = styled.div`
-  font-size: 20px;
-  font-weight: bold;
-`;
-const FlagOn = styled.span`
-  color: #96bf01;
-`;
+
 const HooksDemo = () => {
-  const { devTestFlag } = useFlags();
+  const { testingLaunchDarklyControlFromCypress } = useFlags();
 
   return (
     <Root>
-      <Heading>Hooks Demo</Heading>
+      <Heading>{testingLaunchDarklyControlFromCypress}, World</Heading>
       <div>
-        This is the equivalent demo app using hooks. To run this example:
-        <ul>
-          <ListItem>
-            In app.js, set clientSideID to your own Client-side ID. You can find this in your ld portal under Account
-            settings / Projects.
-          </ListItem>
-          <ListItem>
-            Create a flag called dev-test-flag in your project. Make sure you make it available for the client side js
-            sdk.
-          </ListItem>
-          <ListItem>Turn the flag on and off to see this app respond without a browser refresh.</ListItem>
-        </ul>
+        This is the equivalent LaunchDarkly demo app using hooks.
       </div>
-      <FlagDisplay>{devTestFlag ? <FlagOn>Flag on</FlagOn> : <span>Flag off</span>}</FlagDisplay>
     </Root>
   );
 };
