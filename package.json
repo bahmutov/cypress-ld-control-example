@@ -7,7 +7,7 @@
     "start": "node src/server/index.js",
     "lint": "eslint ./src",
     "serve": "webpack-serve webpack.config.server",
-    "postinstall": "cd ../../ && yarn link-dev"
+    "dev": "start-test 3000 'cypress open'"
   },
   "repository": {
     "type": "git",
@@ -55,6 +55,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^2.5.1",
+    "start-server-and-test": "^1.14.0",
     "universal-hot-reload": "^3.3.4",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",

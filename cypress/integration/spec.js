@@ -7,16 +7,48 @@ before(() => {
 const featureFlagKey = 'testing-launch-darkly-control-from-cypress'
 const userId = 'USER_1234'
 
-it.only('shows the casual greeting', () => {
+it('shows the casual greeting', () => {
   // target the given user to receive the first variation of the feature flag
   cy.task('cypress-ld-control:setFeatureFlagForUser', {
     featureFlagKey,
-    userId: 'string user id',
+    userId,
     variationIndex: 0,
   })
   cy.visit('/')
+  cy.contains('h1', 'Hello, World').should('be.visible')
 })
 
-it('shows formal greeting')
+it('shows formal greeting', () => {
+  cy.task('cypress-ld-control:setFeatureFlagForUser', {
+    featureFlagKey,
+    userId,
+    variationIndex: 1,
+  })
+  cy.visit('/')
+  cy.contains('h1', 'How do you do, World').should('be.visible')
+})
 
-it('shows vacation greeting')
+it('shows vacation greeting', () => {
+  cy.task('cypress-ld-control:setFeatureFlagForUser', {
+    featureFlagKey,
+    userId,
+    variationIndex: 2,
+  })
+  cy.visit('/')
+  cy.contains('h1', 'Aloha, World').should('be.visible')
+
+  // print the current state of the feature flag and its variations
+  cy.task('cypress-ld-control:getFeatureFlag', featureFlagKey)
+    .then(console.log)
+    // let's print the variations to the Command Log side panel
+    .its('variations')
+    .then((variations) => {
+      variations.forEach((v, k) => {
+        cy.log(`${k}: ${v.name} is ${v.value}`)
+      })
+    })
+})
+
+after(() => {
+  cy.task('cypress-ld-control:removeUserTarget', { featureFlagKey, userId })
+})
