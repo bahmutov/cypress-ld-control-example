@@ -49,6 +49,33 @@ it('shows vacation greeting', () => {
     })
 })
 
+it('shows all greetings', () => {
+  cy.visit('/')
+  cy.task('cypress-ld-control:setFeatureFlagForUser', {
+    featureFlagKey,
+    userId,
+    variationIndex: 0,
+  })
+  cy.contains('h1', 'Hello, World')
+    .should('be.visible')
+    // I have added one second waits for clarity
+    .wait(1000)
+
+  cy.task('cypress-ld-control:setFeatureFlagForUser', {
+    featureFlagKey,
+    userId,
+    variationIndex: 1,
+  })
+  cy.contains('h1', 'How do you do, World').should('be.visible').wait(1000)
+
+  cy.task('cypress-ld-control:setFeatureFlagForUser', {
+    featureFlagKey,
+    userId,
+    variationIndex: 2,
+  })
+  cy.contains('h1', 'Aloha, World').should('be.visible')
+})
+
 after(() => {
   cy.task('cypress-ld-control:removeUserTarget', { featureFlagKey, userId })
 })
