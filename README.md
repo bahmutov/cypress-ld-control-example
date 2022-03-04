@@ -2,6 +2,8 @@
 
 > Example app that uses LaunchDarkly and tests the feature flags using Cypress
 
+Read the blog post [Control LaunchDarkly From Cypress Tests](https://glebbahmutov.com/blog/cypress-and-launchdarkly/) and use [cypress-ld-control](https://github.com/bahmutov/cypress-ld-control).
+
 Copied from the official LaunchDarkly React example with commands:
 
 ```
