@@ -4,7 +4,9 @@
 
 Read the blog post [Control LaunchDarkly From Cypress Tests](https://glebbahmutov.com/blog/cypress-and-launchdarkly/) and use [cypress-ld-control](https://github.com/bahmutov/cypress-ld-control).
 
-Copied from the official LaunchDarkly React example with commands:
+![Example test modifying LD feature flags](./images/single-test.gif)
+
+The original app was copied from the official LaunchDarkly React example with commands:
 
 ```
 $ npx degit launchdarkly/react-client-sdk/examples/hoc cypress-ld-control-example
