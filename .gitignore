@@ -4,3 +4,4 @@ npm-debug.log
 dist
 .eslintcache
 .as-a.ini
+package-lock.json
