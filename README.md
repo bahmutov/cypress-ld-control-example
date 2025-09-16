@@ -1,4 +1,4 @@
-# cypress-ld-control-example ![cypress version](https://img.shields.io/badge/cypress-9.5.1-brightgreen) [![ci](https://github.com/bahmutov/cypress-ld-control-example/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bahmutov/cypress-ld-control-example/actions/workflows/ci.yml)
+# cypress-ld-control-example ![cypress version](https://img.shields.io/badge/cypress-10-brightgreen) [![ci](https://github.com/bahmutov/cypress-ld-control-example/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bahmutov/cypress-ld-control-example/actions/workflows/ci.yml)
 
 > Example app that uses LaunchDarkly and tests the feature flags using Cypress
 
