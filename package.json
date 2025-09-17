@@ -27,7 +27,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "express": "^4.16.4",
-    "launchdarkly-react-client-sdk": "^2.22.1",
+    "launchdarkly-react-client-sdk": "^3.8.1",
     "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
@@ -57,9 +57,9 @@
     "prettier": "^2.5.1",
     "start-server-and-test": "^1.14.0",
     "universal-hot-reload": "^3.3.4",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-node-externals": "^1.7.2",
-    "webpack-serve": "^2.0.3"
+    "webpack": "4.47.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^2.5.2",
+    "webpack-serve": "^3.0.0"
   }
 }

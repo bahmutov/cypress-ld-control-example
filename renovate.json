@@ -15,7 +15,11 @@
   "packageRules": [
     {
       "packagePatterns": ["*"],
-      "excludePackagePatterns": ["cypress", "cypress-ld-control"],
+      "excludePackagePatterns": [
+        "cypress",
+        "cypress-ld-control",
+        "launchdarkly-react-client-sdk"
+      ],
       "enabled": false
     }
   ]
